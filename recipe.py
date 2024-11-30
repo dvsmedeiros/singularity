@@ -31,11 +31,9 @@ Stage0 += shell(commands=[
     'wget http://mvapich.cse.ohio-state.edu/download/mvapich/osu-micro-benchmarks-7.5.tar.gz',
     'tar -xzf osu-micro-benchmarks-7.5.tar.gz',
     'cd osu-micro-benchmarks-7.5',
-    './configure CC=mpicc CXX=mpicxx --enable-mpi',
+    './configure CC=mpicc CXX=mpicxx --enable-mpi --prefix=/usr/local/bin',
     'make',
-    'make install',
-    # Ensure executables are moved to /usr/local/bin for easier access
-    'cp -r c/mpi/pt2pt/standard/osu_bw /usr/local/bin/'
+    'make install'
 ])
 
 # Configure environment variables
